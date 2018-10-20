@@ -11,8 +11,7 @@ info.onAdd = function (map) {
 // method that we will use to update the control based on feature properties passed
 info.update = function (props) {
     this._div.innerHTML = '<h4>County Crime Rate</h4>' +  (props ?
-        '<b>' + props.STATEFP + '</b><br />' + props.COUNTYFP + ' people / mi<sup>2</sup>'
-        : 'Hover over a state');
+        '<b>' + props.NAME + ' County</b><br />' : 'Hover over a county');
 };
 
 info.addTo(map);
