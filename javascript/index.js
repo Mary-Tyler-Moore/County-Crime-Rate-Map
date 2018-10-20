@@ -40,8 +40,12 @@ function resetHighlight(e) {
 }
 
 function getColor(d) {
-    return d === "Hemphill" ? '#800026' :
-                      '#FFEDA0';
+    return d === "Washington" ? '#bd0026' :
+        d === "Jefferson" ? '#f03b20' :
+        d === "Franklin" ? '#fd8d3c' :
+        d === "Jackson" ? '#fecc5c' :
+        d === "Lincoln" ? '#ffffb2' :
+        '#FFFFFF';
 }
 
 function style(feature) {
@@ -72,4 +76,3 @@ geoJSON = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?acce
 
 
 geoJSON = L.geoJson(countyData, {style: style, onEachFeature: onEachFeature}).addTo(map);
-
