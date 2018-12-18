@@ -39,17 +39,17 @@ function resetHighlight(e) {
 }
 
 function getColor(d) {
-    return d === "Washington" ? '#bd0026' :
-        d === "Jefferson" ? '#f03b20' :
-        d === "Franklin" ? '#fd8d3c' :
-        d === "Jackson" ? '#fecc5c' :
-        d === "Lincoln" ? '#ffffb2' :
+    return d < 13.059 ? '#fee5d9' :
+        d < 27.934 ? '#fcae91' :
+        d < 43.055 ? '#fb6a4a' :
+        d < 61.751 ? '#de2d26' :
+        d < 187.3 ? '#a50f15' :
         '#FFFFFF';
 }
 
 function style(feature) {
     return {
-        fillColor: getColor(feature.properties.NAME),
+        fillColor: getColor(feature.properties.GRNDTOT),
         weight: 0.5,
         opacity: 1,
         color: 'black',
