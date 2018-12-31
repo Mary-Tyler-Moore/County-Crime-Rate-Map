@@ -1,16 +1,11 @@
-#map{
-    height: 800px;
-    width: 1200px;
-    margin:auto;
-}
-
-html, body{
+body{
     margin: 0;
     padding: 0;
 }
 
-h1{
-    text-align: center;
+html, body, #map{
+    height: 100%;
+    width: 100%;
 }
 
 .controls{
