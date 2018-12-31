@@ -55,19 +55,18 @@ legend.onAdd = function (map) {
 //Updates control based on currently selected crime
 //WIP
 legend.update = function (catagory) {
-    
     this._div.innerHTML = '<h4>Legend</h4>' +  (catagory ?
         '<b>' + catagory.NAME + ' Stats</b><br />' +
         '<div class="input-color"><div class="color-box" style="background-color: ' + catagory.COLOR1 + ';"></div>' +
-        '<span type="text">0 - ' + catagory.RANGE1 + '</span></div><br />' +
+        '<span type="text">0 - ' + Math.round(catagory.RANGE1) + '</span></div><br />' +
         '<div class="input-color"><div class="color-box" style="background-color: ' + catagory.COLOR2 + ';"></div>' +
-        '<span type="text">' + catagory.RANGE1 + ' - ' + catagory.RANGE2 + '</span></div><br />' +
+        '<span type="text">' + Math.round(catagory.RANGE1) + ' - ' + Math.round(catagory.RANGE2) + '</span></div><br />' +
         '<div class="input-color"><div class="color-box" style="background-color: ' + catagory.COLOR3 + ';"></div>' +
-        '<span type="text">' + catagory.RANGE2 + ' - ' + catagory.RANGE3 + '</span></div><br />' +
+        '<span type="text">' + Math.round(catagory.RANGE2) + ' - ' + Math.round(catagory.RANGE3) + '</span></div><br />' +
         '<div class="input-color"><div class="color-box" style="background-color: ' + catagory.COLOR4 + ';"></div>' +
-        '<span type="text">' + catagory.RANGE3 + ' - ' + catagory.RANGE4 + '</span></div><br />' +
+        '<span type="text">' + Math.round(catagory.RANGE3) + ' - ' + Math.round(catagory.RANGE4) + '</span></div><br />' +
         '<div class="input-color"><div class="color-box" style="background-color: ' + catagory.COLOR5 + ';"></div>' +
-        '<span type="text">' + catagory.RANGE4 + ' - ' + catagory.RANGE5 + '</span></div><br />' +
+        '<span type="text">' + Math.round(catagory.RANGE4) + ' - ' + Math.round(catagory.RANGE5) + '</span></div><br />' +
         '<div class="input-color"><div class="color-box" style="background-color: ' + catagory.COLORDEFAULT + ';"></div>' +
         '<span type="text">No Data</span></div><br />': 
         "If you can see this, somethings wrong... Whoops.");
@@ -104,7 +103,8 @@ function getColor(d) {
         d < 27.934 ? '#fcae91' :
         d < 43.055 ? '#fb6a4a' :
         d < 61.751 ? '#de2d26' :
-        '#a50f15';
+        d < 187.30 ? '#a50f15' :
+        '#FFFFFF';
 }
 
 //Styles provided feature
