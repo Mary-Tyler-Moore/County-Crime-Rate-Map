@@ -34,8 +34,21 @@ info.update = function (props) {
 
 //Implement onAdd in legend.
 legend.onAdd = function (map) {
+    //Temp catagory variable
+    catagory = {NAME: "Grand Total",
+        COLOR1: "#fee5d9",
+        COLOR2: "#fcae91",
+        COLOR3: "#fb6a4a",
+        COLOR4: "#de2d26",
+        COLOR5: "#a50f15",
+        COLORDEFAULT: "#FFFFFF",
+        RANGE1: 13.059,
+        RANGE2: 27.934,
+        RANGE3: 43.055,
+        RANGE4: 61.751,
+        RANGE5: 187.3}
     this._div = L.DomUtil.create('div', 'legend');
-    this.update();
+    this.update(catagory);
     return this._div;
 };
 
@@ -74,21 +87,6 @@ function highlightFeature(e){
     }
 
     info.update(layer.feature.properties);
-
-    catagory = {NAME: "Grand Total",
-            COLOR1: "#fee5d9",
-            COLOR2: "#fcae91",
-            COLOR3: "#fb6a4a",
-            COLOR4: "#de2d26",
-            COLOR5: "#a50f15",
-            COLORDEFAULT: "#FFFFFF",
-            RANGE1: 13.059,
-            RANGE2: 27.934,
-            RANGE3: 43.055,
-            RANGE4: 61.751,
-            RANGE5: 187.3}
-
-    legend.update(catagory);
 }
 
 //Resets highlight when mouse off of county
